@@ -1,0 +1,48 @@
+/* for flex container */
+.flex-container {
+    display: flex;
+}
+
+/*
+shorthand for flex: 1 1 0
+flex-grow: 1 - The div will grow in same proportion as the window-size     
+flex-shrink : 1 - The div will shrink in same proportion as the window-size 
+flex-basis : 0 - The div does not have a starting value as such and will take up 
+screen as per the screen size available for
+*/
+.flex-child {
+    flex: 1;
+}
+
+/* help center text */
+.center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* make game status bold */
+#status {
+    font-weight: bold;
+}
+
+/* help add newline for each round in match history */
+#round {
+    white-space: pre-line;
+}
+
+#parent {
+    display: grid;
+}
+
+/* progress bar properties */
+#bar {
+    width: 0%;
+    height: 30px;
+    background-color: seagreen;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    transition: width 15s linear;
+    margin: auto;
+}
