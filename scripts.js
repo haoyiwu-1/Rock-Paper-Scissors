@@ -95,7 +95,7 @@ function findRoundWinner(choice) {
         inputButtons = document.getElementsByClassName("playerInput");
         for (const button of inputButtons) {
             button.disabled = true;
-          }
+        }
         // base status statement
         status.textContent = "Overall score is player: " + playerWins + ", computer: " + computerWins;
         // check who is winner of match and output to user
@@ -116,6 +116,8 @@ function findRoundWinner(choice) {
             compResult.textContent = "WINNER!";
             compResult.style.color = "Green";
         }
+        document.getElementById("playerImageContainer").classList.add("hidden");
+        document.getElementById("compImageContainer").classList.add("hidden");
         restart();
     }
 }

@@ -21,6 +21,10 @@ screen as per the screen size available for
     align-items: center;
 }
 
+.hidden {
+    display: none;
+}
+
 /* make game status bold */
 #status {
     font-weight: bold;
@@ -39,7 +43,7 @@ screen as per the screen size available for
 #bar {
     width: 0%;
     height: 30px;
-    background-color: seagreen;
+    background-color: black;
     text-align: center;
     line-height: 30px;
     color: white;
