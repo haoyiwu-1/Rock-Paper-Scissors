@@ -25,6 +25,16 @@ screen as per the screen size available for
     display: none;
 }
 
+.show {
+    visibility: visible !important;
+}
+
+#restart-text {
+    font-weight: bold;
+    font-size: 30px;
+    visibility: hidden;
+}
+
 /* make game status bold */
 #status {
     font-weight: bold;
@@ -35,12 +45,9 @@ screen as per the screen size available for
     white-space: pre-line;
 }
 
-#parent {
-    display: grid;
-}
-
 /* progress bar properties */
 #bar {
+    box-sizing: border-box;
     width: 0%;
     height: 30px;
     background-color: black;
@@ -48,5 +55,8 @@ screen as per the screen size available for
     line-height: 30px;
     color: white;
     transition: width 15s linear;
-    margin: auto;
+}
+
+#bar.animate {
+    width: 100%;
 }

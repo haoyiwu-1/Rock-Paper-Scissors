@@ -57,10 +57,15 @@
             <button onclick="window.location.reload();">Restart/Reset</button>
         </div>
         <br>
-        <div class="parent">
-            <!-- restart progress bar -->
-            <div id="bar"></div>
-        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <p id="restart-text">Restarting game...</p>
+    </div>
+    <div id="bar-container" class="mx-4">
+        <!-- restart progress bar -->
+        <div id="bar"></div>
+        <p id="percentage" class="text-center"></p>
+    </div>
 </body>
 
 </html>

@@ -118,25 +118,40 @@ function findRoundWinner(choice) {
         }
         document.getElementById("playerImageContainer").classList.add("hidden");
         document.getElementById("compImageContainer").classList.add("hidden");
+
+        restartText = document.getElementById("restart-text")
+        restartText.classList.add("show");
+
+        restartBarPercentage = document.getElementById("percentage");
+
         restart();
+
+        setTimeout(function () {
+            restartBarPercentage.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        }, 500);
     }
 }
 
 // restart function to restart game after 15s and show restart progress bar
 function restart() {
     var bar = document.getElementById("bar");
-    var width = 0;
-    var time = setInterval(frame, 150);
-    function frame() {
-        if (width >= 100) {
-            clearInterval(time);
-            window.location.reload();
-        } else {
-            width += 1;
-            bar.style.width = width + "%";
-            bar.textContent = "Restarting " + width + "%";
-            bar.style.fontWeight = "bold";
+    var percentageText = document.getElementById("percentage");
+    var barContainer = document.getElementById("bar-container");
+    bar.classList.add('animate');
+
+    setInterval(function () {
+        var barWidth = bar.offsetWidth;
+        var containerWidth = barContainer.offsetWidth;
+
+        var percentage = (barWidth / containerWidth) * 100;
+
+        if (percentage <= 100) {
+            percentageText.textContent = Math.round(percentage) + "%";
         }
-    }
+    }, 150);
+
+    setTimeout(function () {
+        window.location.reload();
+    }, 15500);
 }
 
